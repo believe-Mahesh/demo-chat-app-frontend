@@ -11,7 +11,10 @@ export class HomeComponent {
   public inputText: any;
 
   constructor(private _route: Router, private _chatService : ChatService) {}
-  postMessage() {}
+  postMessage() {
+    this._chatService.setSearchString(this.inputText)
+    this._route.navigate(['chat'])
+  }
 
   public categories: any = [
     {
