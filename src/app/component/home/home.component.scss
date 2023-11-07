@@ -1,0 +1,126 @@
+.home-container {
+  margin-top: 60px;
+}
+
+.banner-container {
+  justify-content: center;
+  width: 80%;
+  margin-right: auto;
+  margin-left: auto;
+
+  &-img {
+    margin-bottom: 60px;
+  }
+  &-text {
+    color: #1f1f1f;
+    text-align: center;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    margin-bottom: 40px;
+    line-height: 32px; /* 160% */
+  }
+}
+
+.input-div {
+  margin-bottom: 60px;
+}
+
+.input-group {
+  border-radius: 40px;
+  background: #fff;
+  box-shadow: 0px 4px 4px 0px #f3f1f1;
+  &-text {
+    background-color: #ffffff;
+    border: 0px;
+  }
+  &-prepend {
+    span {
+      border-top-left-radius: 40px;
+      border-bottom-left-radius: 40px;
+    }
+  }
+  &-append {
+    span {
+      // border-top-right-radius: 40px;
+      // border-bottom-right-radius: 40px;
+      border-radius: 40px;
+      background: #53459b;
+      height: 44px;
+      color: #ffffff;
+      margin-top: 10px;
+      img {
+        margin-left: 6px;
+      }
+    }
+  }
+}
+.search-box {
+  // border-right: 0px;
+  // border-left: 0px;
+  border: 0px;
+  height: 60px;
+}
+
+.form-control:focus {
+  box-shadow: none;
+  border: 0px;
+  // border-top: 1px solid #ced4da;
+  // border-bottom: 1px solid #ced4da;
+}
+
+.department-div {
+  .head {
+    color: #1f1f1f;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    margin-bottom: 25px;
+    line-height: 22.4px; /* 112% */
+  }
+  &-cat {
+    border-radius: 12px;
+    background: #faefca;
+    padding: 16px;
+    max-width: 31%;
+    margin-right: 2%;
+    &:last-child {
+      max-width: 33%;
+      margin-right: 0;
+    }
+    &-title {
+      color: #1f1f1f;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 28.8px; /* 160% */
+    }
+    &-sub-title {
+      color: #1f1f1f;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 22.4px; /* 160% */
+      border-radius: 8px;
+      background: #ede1bb;
+      padding: 8px;
+    }
+  }
+}
+
+.load-more-div {
+  margin-top: 40px;
+  justify-content: center;
+  .load-more {
+    color: #1f1f1f;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28.8px; /* 160% */
+    border-radius: 12px;
+    padding: 16px;
+    text-align: center;
+    cursor: not-allowed;
+    border: 1px solid rgba(31, 31, 31, 0.15);
+  }
+}

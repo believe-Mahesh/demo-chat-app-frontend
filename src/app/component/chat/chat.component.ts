@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ChatService } from 'src/app/service/chat.service';
 
 @Component({
@@ -6,9 +6,16 @@ import { ChatService } from 'src/app/service/chat.service';
   templateUrl: './chat.component.html',
   styleUrls: ['./chat.component.scss']
 })
-export class ChatComponent {
+export class ChatComponent implements OnInit{
   constructor(private _chatService: ChatService){
 
+  }
+
+  ngOnInit(): void {
+    this.inputText = this._chatService.getSearchString();
+    if(this.inputText!= '') {
+      this.postMessage()
+    }
   }
   title = 'chat-bot-ui';
   inputText = '';
@@ -73,6 +80,8 @@ export class ChatComponent {
       this.chatConvesrsation.pop()
       console.log('Chat Res', data)
       this.chatConvesrsation.push({type:'from',text:data.data, url: data.url || ''})
+    }, err=>{
+      this.chatConvesrsation.pop()
     })
   }
 }

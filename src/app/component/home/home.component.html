@@ -1,0 +1,49 @@
+<div class="container">
+    <div class="home-container">
+        <div class="row banner-container">
+            <img class="banner-container-img" src="./assets/images/utills/home-logo.svg">
+            <p class="banner-container-text">Welcome to State Citizen Services portal. Please ask me anything and I'm here to help and provide information about the state services.</p>
+        </div>
+        <div class="input-div">
+          <div class="chat-input-div">
+            <div class="input-group mb-0">
+              <div class="input-group-prepend">
+                <span class="input-group-text" (click)="postMessage()"
+                  >
+                  <img src="./assets/images/utills/flower.svg">
+                  <!-- <i class="fa fa-send"></i
+                > -->
+
+              </span>
+              </div>
+              <input
+                type="text"
+                class="form-control search-box"
+                placeholder="Start your first message with us"
+                [(ngModel)]="inputText"
+                (keydown.enter)="postMessage()"
+              />
+              <div class="input-group-append">
+                <span class="input-group-text">
+                  Start a new chat
+                  <img class="input-group-append-img" src="./assets/images/utills/send-white.svg">
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row department-div">
+          <div class="col-md-12 px-0 head">Try these</div>
+          <div class="col-md-4 department-div-cat" [style.background-color]="category.color" *ngFor="let category of categories">
+            <p class="department-div-cat-title">{{category.title}}</p>
+            <p class="department-div-cat-sub-title cursor-pointer" (click)="setSerchString(sC)" [style.background-color]="category.sub_color"  *ngFor="let sC of category.sub_category">{{sC}}</p>
+          </div>
+        </div>
+        <div class="row load-more-div">
+
+          <div class="col-4">
+            <p class="load-more">Load more Departments</p>
+          </div>
+        </div>
+    </div>
+</div>

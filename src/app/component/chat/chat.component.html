@@ -182,7 +182,7 @@
                         <div class="col-md-12 d-flex">
                           <img
                             class="m-avatar"
-                            src="./assets/images/utills/avatar.svg"
+                            src="./assets/images/utills/default-avatar.svg"
                           />
                           <div class="text-content">
                             <div class="title">YOU</div>
@@ -297,7 +297,7 @@
                       [(ngModel)]="inputText"
                       (keydown.enter)="postMessage()"
                     />
-                    <div class="input-group-append">
+                    <div class="input-group-append cursor-pointer" (click)="postMessage()">
                       <span class="input-group-text">
                         <img src="./assets/images/utills/send.svg">
                       </span>

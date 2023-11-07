@@ -1,7 +1,20 @@
-.input-group-text{
-  background-color: #ffffff;
-  border: 0px;
-
+.input-group {
+  &-text {
+    background-color: #ffffff;
+    border: 0px;
+  }
+  &-prepend {
+    span {
+      border-top-left-radius: 12px;
+      border-bottom-left-radius: 12px;
+    }
+  }
+  &-append {
+    span {
+      border-top-right-radius: 12px;
+      border-bottom-right-radius: 12px;
+    }
+  }
 }
 .search-box {
   // border-right: 0px;
@@ -15,8 +28,6 @@
   border: 0px;
   // border-top: 1px solid #ced4da;
   // border-bottom: 1px solid #ced4da;
-
-
 }
 
 .s-chat-bot {
@@ -68,7 +79,6 @@
   }
 }
 
-
 .people-list {
   -moz-transition: 0.5s;
   -o-transition: 0.5s;
@@ -116,9 +126,8 @@
   display: none;
 }
 
-
-.my-message{
-  color: #1F1F1F;
+.my-message {
+  color: #1f1f1f;
   line-height: 19.2px;
   .m-avatar {
     margin-right: 16px;
@@ -128,19 +137,18 @@
     .title {
       font-size: 12px;
       font-weight: 600;
-      }
-      .content {
-        font-size: 14px;
-        font-weight: 400;
-      }
     }
-
+    .content {
+      font-size: 14px;
+      font-weight: 400;
+    }
   }
+}
 
 .other-message {
   border-radius: 12px;
-  background: #FFF;
-  box-shadow: 0px 2px 4px 0px #D6D5D5;
+  background: #fff;
+  box-shadow: 0px 2px 4px 0px #d6d5d5;
   // text-align: right;
   width: auto;
   max-width: 100%;
@@ -159,17 +167,16 @@
     .title {
       font-size: 12px;
       font-weight: 600;
-      }
     }
-    .contenet {
-      font-size: 12px;
-      font-weight: 500;
-    }
-    .top-icons {
-      width: 20%;
-    }
+  }
+  .contenet {
+    font-size: 12px;
+    font-weight: 500;
+  }
+  .top-icons {
+    width: 20%;
+  }
 }
-
 
 .chat .chat-header {
   padding: 15px 20px;
@@ -199,7 +206,7 @@
     border-radius: 10px;
     border-radius: 8px;
     border: 1px solid rgba(31, 31, 31, 0.15);
-    color: #1F1F1F;
+    color: #1f1f1f;
     font-size: 14px;
   }
 }
@@ -221,11 +228,10 @@
   display: grid;
   /* width: 100%; */
   align-items: flex-end;
-  &-format{
+  &-format {
     width: 800px;
     margin-left: auto;
     margin-right: auto;
-
   }
 }
 
@@ -459,4 +465,3 @@
     background-color: rgba(152, 128, 255, 0.2);
   }
 }
-

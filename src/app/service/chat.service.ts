@@ -10,6 +10,16 @@ export class ChatService {
 
   constructor(private http: HttpClient) {}
 
+  searchString = '';
+
+  setSearchString(value: string) {
+    this.searchString = value
+  }
+
+  getSearchString(){
+    return this.searchString;
+  }
+
   postMessage=(
     messageBody: any
   ): Observable<any> =>{
