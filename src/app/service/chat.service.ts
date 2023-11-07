@@ -25,7 +25,11 @@ export class ChatService {
   ): Observable<any> =>{
      return this.http
      .post(
-      `${environment.server.baseURL}/chat`,messageBody
+      `${environment.server.baseURL}/chat`,messageBody, {
+        observe: "events",
+        responseType: "text",
+        reportProgress: true,
+      }
      );
   };
 }
