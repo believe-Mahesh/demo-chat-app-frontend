@@ -4,8 +4,25 @@
       <div class="card chat-app">
         <div id="plist" class="people-list">
           <div class="logo-section">
-            <img src="./assets/images/utills/nm.svg" />
+            <img routerLink="/" class="cursor-pointer" src="./assets/images/utills/nm.svg" />
           </div>
+          <div class="new-chat-div">
+            <button type="button" class="btn btn-primary" (click)="createNewChat()">New Chat</button>
+          </div>
+          <div class="historic-chat-div">
+            <p class="re-text">Recent</p>
+            <div class="historic-chat-div-content row" *ngFor="let history of historicList" (click)="setHistoricChat(history)">
+              <div class="col-md-1 p-0 imag">
+                <img src="./assets/images/utills/chat.svg" />
+              </div>
+              <div class="col-md-10 p-0 tc">
+                <p class="tc-title">{{history.title}}</p>
+                <p class="tc-sub">{{history.sub}}</p>
+              </div>
+              <!-- <div class="col-md-1 p-0 time"></div> -->
+            </div>
+          </div>
+
           <div class="input-group d-none">
             <div class="input-group-prepend">
               <span class="input-group-text"><i class="fa fa-search"></i></span>
@@ -116,18 +133,27 @@
             </div>
             <div class="chat-history">
               <div class="chat-history-format">
-                <div class="row chat-def-screen" *ngIf="chatConvesrsation?.length === 0">
-                <div class="col-md-6 text-center" *ngFor="let q of questios" (click)="setInputText(q.title)">
-                  <span class="chat-def-screen-head cursor-pointer">
-                    {{q.title}}
-                    <!-- <i class="fa fa-send pl-2"></i> -->
-
-                </span>
+                <div
+                  class="row chat-def-screen"
+                  *ngIf="chatConvesrsation?.length === 0"
+                >
+                  <div
+                    class="col-md-6 text-center"
+                    *ngFor="let q of questios"
+                    (click)="setInputText(q.title)"
+                  >
+                    <span class="chat-def-screen-head cursor-pointer">
+                      {{ q.title }}
+                      <!-- <i class="fa fa-send pl-2"></i> -->
+                    </span>
+                  </div>
                 </div>
-              </div>
                 <ul class="m-b-0" *ngIf="chatConvesrsation?.length > 0">
                   <ng-container *ngFor="let chat of chatConvesrsation">
-                    <li class="clearfix other-message" *ngIf="chat.type === 'from'">
+                    <li
+                      class="clearfix other-message"
+                      *ngIf="chat.type === 'from'"
+                    >
                       <div class="row">
                         <div class="col-md-12 d-flex">
                           <img
@@ -144,8 +170,8 @@
                       </div>
 
                       <!-- <div class="message-data text-right"> -->
-                        <!-- <span class="message-data-time">10:10 AM, Today</span> -->
-                        <!-- <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="avatar"> -->
+                      <!-- <span class="message-data-time">10:10 AM, Today</span> -->
+                      <!-- <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="avatar"> -->
 
                       <!-- </div> -->
                       <!-- <div class="message float-right">
@@ -282,13 +308,11 @@
                 <div class="chat-input-div">
                   <div class="input-group mb-0">
                     <div class="input-group-prepend">
-                      <span class="input-group-text" (click)="postMessage()"
-                        >
-                        <img src="./assets/images/utills/flower.svg">
+                      <span class="input-group-text" (click)="postMessage()">
+                        <img src="./assets/images/utills/flower.svg" />
                         <!-- <i class="fa fa-send"></i
                       > -->
-
-                    </span>
+                      </span>
                     </div>
                     <input
                       type="text"
@@ -297,9 +321,12 @@
                       [(ngModel)]="inputText"
                       (keydown.enter)="postMessage()"
                     />
-                    <div class="input-group-append cursor-pointer" (click)="postMessage()">
+                    <div
+                      class="input-group-append cursor-pointer"
+                      (click)="postMessage()"
+                    >
                       <span class="input-group-text">
-                        <img src="./assets/images/utills/send.svg">
+                        <img src="./assets/images/utills/send.svg" />
                       </span>
                     </div>
                   </div>

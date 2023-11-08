@@ -14,14 +14,31 @@ import { ChatService } from 'src/app/service/chat.service';
 export class ChatComponent implements OnInit {
   constructor(private _chatService: ChatService) {}
 
+  uId = 0;
   ngOnInit(): void {
     this.inputText = this._chatService.getSearchString();
+    debugger
     if (this.inputText != '') {
       this.postMessage();
     }
   }
   title = 'chat-bot-ui';
   inputText = '';
+
+  public historicList: any = [
+    // {
+    //   id: 1,
+    //   title: 'Tell me about DoIT',
+    //   sub: 'Tell me about DoITTell me about DoITTell me about DoITTell me about DoITTell me about DoIT',
+    //   chatArray: [
+    //     { type: 'from', text: 'Fingerprint and background check serviceFingerprint and background check serviceFingerprint and background check serviceFingerprint and background check serviceFingerprint and background check serviceFingerprint and background check serviceFingerprint and background check serviceFingerprint and background check service' },
+    //   { type: 'to', text: 'Fingerprint and background check serviceFingerprint and background check serviceFingerprint and background check serviceFingerprint and background check serviceFingerprint and background check serviceFingerprint and background check serviceFingerprint and background check serviceFingerprint and background check service' },
+    //   { type: 'to', text: 'Hi...' },
+    //   { type: 'to', text: 'Hi...' },
+    // ]
+    // }
+  ]
+
   public chatHistory: any = [
     { title: 'Tell me about DoIT' },
     { title: 'Fingerprint and background check service' },
@@ -32,8 +49,8 @@ export class ChatComponent implements OnInit {
   public chatConvesrsation: any = [
     // { type: 'from', text: 'Fingerprint and background check serviceFingerprint and background check serviceFingerprint and background check serviceFingerprint and background check serviceFingerprint and background check serviceFingerprint and background check serviceFingerprint and background check serviceFingerprint and background check service' },
     // { type: 'to', text: 'Fingerprint and background check serviceFingerprint and background check serviceFingerprint and background check serviceFingerprint and background check serviceFingerprint and background check serviceFingerprint and background check serviceFingerprint and background check serviceFingerprint and background check service' },
-    // { type: 'to', text: 'Hi...' },
-    // { type: 'to', text: 'Hi...' },
+    // { type: 'from', text: 'Hi...' },
+    // { type: 'to', text: 'Hey...' },
     // { type: 'to', text: 'Hi...' },
     // { type: 'from', text: 'Hi' },
     // { type: 'to', text: 'Hi...' },
@@ -63,7 +80,26 @@ export class ChatComponent implements OnInit {
     this.postMessage();
   }
 
+  setHistoricChat(hList : any) {
+    this.chatConvesrsation = hList.chatArray;
+  }
+
+  createNewChat() {
+   const to = this.chatConvesrsation.filter((d:any)=> d.type==='to').pop()
+   const from = this.chatConvesrsation.filter((d:any)=> d.type==='from').pop()
+   let chat =  {
+      id: this.uId,
+      title: to.text,
+      sub: from.text,
+      chatArray: this.chatConvesrsation
+    }
+    this.uId+=1;
+    this.historicList.unshift(chat);
+    this.chatConvesrsation = [];
+  }
+
   postMessage() {
+    debugger
     this.chatConvesrsation.push({ type: 'to', text: this.inputText });
     const chatBody = {
       messages: [
@@ -78,7 +114,6 @@ export class ChatComponent implements OnInit {
     let data: any = {};
     this._chatService.postMessage(chatBody).subscribe({
       next: (event: HttpEvent<string>) => {
-
         if (event.type === HttpEventType.DownloadProgress) {
           this.chatConvesrsation.pop();
           this.chatConvesrsation.push({

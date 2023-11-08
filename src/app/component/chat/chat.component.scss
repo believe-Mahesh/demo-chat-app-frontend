@@ -1,3 +1,61 @@
+.new-chat-div {
+  button {
+    width: 100%;
+    border-radius: 40px;
+    border-color: #53459b;
+    background: #53459b;
+    color: #fff;
+    height: 36px;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: normal;
+  }
+}
+
+.historic-chat-div {
+  .re-text {
+    color: rgba(49, 45, 46, 0.5);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 22.4px; /* 160% */
+    margin-top: 32px;
+    margin-bottom: 16px;
+  }
+  &-content {
+    margin: 0px;
+    height: 52px;
+    padding: 8px;
+    margin-bottom: 16px;
+    border-radius: 12px;
+    border: 1px solid rgba(31, 31, 31, 0.1);
+    box-shadow: 0px 2px 4px 0px rgba(31, 31, 31, 0.5);
+    .imag {
+    }
+    .tc {
+      &-title {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        color: #1f1f1f;
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 19.2px;
+        margin: 0px;
+      }
+      &-sub {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        color: rgba(31, 31, 31, 0.5);
+        font-size: 10px;
+        font-weight: 400;
+        line-height: 16px;
+        margin: 0px;
+      }
+    }
+  }
+}
+
 .input-group {
   &-text {
     background-color: #ffffff;
@@ -15,6 +73,10 @@
       border-bottom-right-radius: 12px;
     }
   }
+}
+
+.in-disabled {
+  pointer-events : none;
 }
 .search-box {
   // border-right: 0px;
@@ -48,7 +110,7 @@
   // box-shadow: 0 1px 2px 0 rgb(0 0 0 / 10%);
 }
 .chat-app .people-list {
-  width: 280px;
+  width: 340px;
   position: absolute;
   left: 0;
   top: 0;
@@ -65,7 +127,7 @@
 }
 
 .chat-app .chat {
-  margin-left: 280px;
+  margin-left: 340px;
   border-left: 1px solid #eaeaea;
   height: 100vh;
   position: relative;
