@@ -11,7 +11,7 @@
           </div>
           <div class="historic-chat-div">
             <p class="re-text">Recent</p>
-            <div class="historic-chat-div-content row" *ngFor="let history of historicList" (click)="setHistoricChat(history)">
+            <div class="historic-chat-div-content row cursor-pointer" *ngFor="let history of historicList" (click)="setHistoricChat(history)">
               <div class="col-md-1 p-0 imag">
                 <img src="./assets/images/utills/chat.svg" />
               </div>
@@ -325,8 +325,11 @@
                       class="input-group-append cursor-pointer"
                       (click)="postMessage()"
                     >
-                      <span class="input-group-text">
+                      <span class="input-group-text" *ngIf="inputText.trim().length < 1">
                         <img src="./assets/images/utills/send.svg" />
+                      </span>
+                      <span class="input-group-text" *ngIf="inputText.trim().length >= 1">
+                        <img src="./assets/images/utills/send-blue.svg" />
                       </span>
                     </div>
                   </div>

@@ -201,13 +201,14 @@
       font-weight: 600;
     }
     .content {
-      font-size: 14px;
+      font-size: 16px;
       font-weight: 400;
     }
   }
 }
 
 .other-message {
+  margin-left: 20px;
   border-radius: 12px;
   background: #fff;
   box-shadow: 0px 2px 4px 0px #d6d5d5;
@@ -230,11 +231,12 @@
       font-size: 12px;
       font-weight: 600;
     }
-  }
+
   .contenet {
     font-size: 12px;
     font-weight: 500;
   }
+}
   .top-icons {
     width: 20%;
   }
@@ -291,7 +293,7 @@
   /* width: 100%; */
   align-items: flex-end;
   &-format {
-    width: 800px;
+    width:80%;
     margin-left: auto;
     margin-right: auto;
   }
