@@ -232,9 +232,12 @@
       font-weight: 600;
     }
 
-  .contenet {
-    font-size: 12px;
-    font-weight: 500;
+  .content {
+    font-size: 16px;
+    font-weight: 400;
+    h1 , h2, h3 {
+      font-size: 20px;
+    }
   }
 }
   .top-icons {
