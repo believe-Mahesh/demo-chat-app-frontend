@@ -8,7 +8,7 @@
           <div class="chat-input-div">
             <div class="input-group mb-0">
               <div class="input-group-prepend">
-                <span class="input-group-text" (click)="postMessage()"
+                <span class="input-group-text"
                   >
                   <img src="./assets/images/utills/flower.svg">
                   <!-- <i class="fa fa-send"></i
@@ -24,7 +24,7 @@
                 (keydown.enter)="postMessage()"
               />
               <div class="input-group-append cursor-pointer">
-                <span class="input-group-text">
+                <span class="input-group-text" (click)="postMessage()">
                   Start a new chat
                   <img class="input-group-append-img" src="./assets/images/utills/send-white.svg">
                 </span>

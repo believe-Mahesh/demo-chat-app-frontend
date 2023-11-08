@@ -8,7 +8,7 @@ import { ChatService } from 'src/app/service/chat.service';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent {
-  public inputText: any;
+  public inputText='';
 
   constructor(private _route: Router, private _chatService : ChatService) {}
   postMessage() {
