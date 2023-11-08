@@ -1,5 +1,5 @@
 export const environment = {
   server: {
-    baseURL: 'http://localhost:8080/api',
+    baseURL: 'https://eww6i2reaf.execute-api.us-east-1.amazonaws.com//api' ,
   }
 }
