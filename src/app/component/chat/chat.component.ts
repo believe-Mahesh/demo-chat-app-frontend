@@ -99,6 +99,7 @@ export class ChatComponent implements OnInit {
   }
 
   postMessage() {
+    this.chatConvesrsation = this.chatConvesrsation.filter((d:any)=> d.type !=='from-load')
     debugger
     this.chatConvesrsation.push({ type: 'to', text: this.inputText });
     const chatBody = {
