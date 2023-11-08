@@ -7,12 +7,14 @@ import { HttpClientModule, provideHttpClient, withFetch } from '@angular/common/
 import { FormsModule } from '@angular/forms';
 import { ChatComponent } from './component/chat/chat.component';
 import { HomeComponent } from './component/home/home.component';
+import { MarkedPipe } from './service/marked.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     ChatComponent,
-    HomeComponent
+    HomeComponent,
+    MarkedPipe,
   ],
   imports: [
     BrowserModule,

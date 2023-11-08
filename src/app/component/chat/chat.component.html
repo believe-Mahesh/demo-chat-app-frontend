@@ -162,7 +162,7 @@
                           />
                           <div class="text-content">
                             <div class="title">New Mexico AI</div>
-                            <div class="content">{{ chat.text }}</div>
+                            <div class="content" [innerHTML]="chat.text | marked"></div>
                           </div>
                           <div class="top-icons"></div>
                         </div>
