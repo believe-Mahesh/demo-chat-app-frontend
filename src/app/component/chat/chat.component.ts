@@ -24,7 +24,6 @@ export class ChatComponent implements OnInit {
   }
   title = 'chat-bot-ui';
   inputText = '';
-
   public historicList: any = [
     // {
     //   id: 1,
@@ -47,8 +46,8 @@ export class ChatComponent implements OnInit {
   ];
 
   public chatConvesrsation: any = [
-    // { type: 'from', text: 'Fingerprint and background check serviceFingerprint and background check serviceFingerprint and background check serviceFingerprint and background check serviceFingerprint and background check serviceFingerprint and background check serviceFingerprint and background check serviceFingerprint and background check service' },
-    // { type: 'to', text: 'Fingerprint and background check serviceFingerprint and background check serviceFingerprint and background check serviceFingerprint and background check serviceFingerprint and background check serviceFingerprint and background check serviceFingerprint and background check serviceFingerprint and background check service' },
+    {url: [' https://www.dot.nm.gov/planning-research-multimodal-and-safety/modal/traffic-safety/',' https://www.dot.nm.gov/planning-research-multimodal-and-safety/modal/traffic-safety/'] ,type: 'from', text: 'Fingerprint and background check serviceFingerprint and background check serviceFingerprint and background check serviceFingerprint and background check serviceFingerprint and background check serviceFingerprint and background check serviceFingerprint and background check serviceFingerprint and background check service' },
+    { url: [],type: 'to', text: 'Fingerprint and background check serviceFingerprint and background check serviceFingerprint and background check serviceFingerprint and background check serviceFingerprint and background check serviceFingerprint and background check serviceFingerprint and background check serviceFingerprint and background check service' },
     // { type: 'from', text: 'Hi...' },
     // { type: 'to', text: 'Hey...' },
     // { type: 'to', text: 'Hi...' },
