@@ -3,7 +3,7 @@ import {
   HttpEvent,
   HttpEventType,
 } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ChatService } from 'src/app/service/chat.service';
 
 @Component({
@@ -13,11 +13,11 @@ import { ChatService } from 'src/app/service/chat.service';
 })
 export class ChatComponent implements OnInit {
   constructor(private _chatService: ChatService) {}
+  @ViewChild('scrollContainer', { static: false }) public scrollContainer: ElementRef | any;
 
   uId = 0;
   ngOnInit(): void {
     this.inputText = this._chatService.getSearchString();
-    debugger
     if (this.inputText != '') {
       this.postMessage();
     }
@@ -80,6 +80,11 @@ export class ChatComponent implements OnInit {
     this.postMessage();
   }
 
+  scrollToBottom(): void {
+    const container = this.scrollContainer.nativeElement;
+    container.scrollTop = container.scrollHeight;
+  }
+
   setHistoricChat(hList : any) {
     this.chatConvesrsation = hList.chatArray;
   }
@@ -100,7 +105,6 @@ export class ChatComponent implements OnInit {
 
   postMessage() {
     this.chatConvesrsation = this.chatConvesrsation.filter((d:any)=> d.type !=='from-load')
-    debugger
     this.chatConvesrsation.push({ type: 'to', text: this.inputText });
     const chatBody = {
       messages: [
@@ -122,6 +126,9 @@ export class ChatComponent implements OnInit {
             text: (event as HttpDownloadProgressEvent).partialText,
             url: data.url || '',
           });
+          setTimeout(() => {
+            this.scrollToBottom()
+          }, 1000);
         } else if (event.type === HttpEventType.Response) {
           this.chatConvesrsation.pop();
           this.chatConvesrsation.push({
