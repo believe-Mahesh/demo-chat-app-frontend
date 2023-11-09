@@ -32,4 +32,8 @@ export class ChatService {
       }
      );
   };
+
+  getUrls=(messageBody: any) : Observable<any> => {
+    return this.http.post(`${environment.server.baseURL}/urls`, messageBody);
+  }
 }
