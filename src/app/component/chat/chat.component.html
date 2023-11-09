@@ -180,16 +180,17 @@
                               class="content"
                               [innerHTML]="chat.text | marked"
                             ></div>
-                            <div class="url-div">
-                              <p class="url-text">
-                                Follow the link for additional information:<a
+                            <div class="url-div" *ngIf="url.length > 0">
+                              <p><b>Follow the link for additional information:</b></p>
+                            <div  class="url-text" *ngFor="let u of url">
+                              <p>
+                                <a
                                   href="{{ u }}"
                                   target="_blank"
-                                  *ngFor="let u of chat.url"
                                   >{{ u }}
                                 </a>
                               </p>
-                            </div>
+                            </div></div>
                           </div>
                           <div class="top-icons"></div>
                         </div>
