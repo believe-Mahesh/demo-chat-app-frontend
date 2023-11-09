@@ -8,12 +8,20 @@ body {
 
 // Generic CSS start
 
-.cursor-pointer{
+.cursor-pointer {
   cursor: pointer;
+}
+.other-message {
+  .content {
+    h1,
+    h2,
+    h3 {
+      font-size: 20px;
+    }
+  }
 }
 
 // .h-100vh {
 //   height: 100vh;
 // }
 // Generic CSS End
-
