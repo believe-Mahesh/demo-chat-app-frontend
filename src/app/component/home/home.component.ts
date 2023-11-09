@@ -23,7 +23,7 @@ export class HomeComponent {
       category: 'Health',
       col: 4,
       sub_category: [
-        'How to Become a NM WIC Authorized Vendor',
+        'How to become a NM WIC authorized vendor',
         'Is there any flu cases identified in our state?',
         'What is the timing of New Mexico Rehabilitation Center?',
         'How do I report child abuse?'
@@ -37,7 +37,7 @@ export class HomeComponent {
       col: 3,
       sub_category: [
         'How to apply drivers license?',
-        'How to Requests to Inspect Public Records',
+        'How to request to inspect public records',
         'Can we adopt an highway?',
         'What is the procedure to get over weight permit?'
       ],
