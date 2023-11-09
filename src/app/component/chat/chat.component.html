@@ -4,20 +4,34 @@
       <div class="card chat-app">
         <div id="plist" class="people-list">
           <div class="logo-section">
-            <img routerLink="/" class="cursor-pointer" src="./assets/images/utills/nm.svg" />
+            <img
+              routerLink="/"
+              class="cursor-pointer"
+              src="./assets/images/utills/nm.svg"
+            />
           </div>
           <div class="new-chat-div">
-            <button type="button" class="btn btn-primary" (click)="createNewChat()">New Chat</button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              (click)="createNewChat()"
+            >
+              New Chat
+            </button>
           </div>
           <div class="historic-chat-div">
             <p class="re-text">Recent</p>
-            <div class="historic-chat-div-content row cursor-pointer" *ngFor="let history of historicList" (click)="setHistoricChat(history)">
+            <div
+              class="historic-chat-div-content row cursor-pointer"
+              *ngFor="let history of historicList"
+              (click)="setHistoricChat(history)"
+            >
               <div class="col-md-1 p-0 imag">
                 <img src="./assets/images/utills/chat.svg" />
               </div>
               <div class="col-md-10 p-0 tc">
-                <p class="tc-title">{{history.title}}</p>
-                <p class="tc-sub">{{history.sub}}</p>
+                <p class="tc-title">{{ history.title }}</p>
+                <p class="tc-sub">{{ history.sub }}</p>
               </div>
               <!-- <div class="col-md-1 p-0 time"></div> -->
             </div>
@@ -162,7 +176,20 @@
                           />
                           <div class="text-content">
                             <div class="title">New Mexico AI</div>
-                            <div class="content" [innerHTML]="chat.text | marked"></div>
+                            <div
+                              class="content"
+                              [innerHTML]="chat.text | marked"
+                            ></div>
+                            <div class="url-div">
+                              <p class="url-text">
+                                Follow the link for additional information:<a
+                                  href="{{ u }}"
+                                  target="_blank"
+                                  *ngFor="let u of chat.url"
+                                  >{{ u }}
+                                </a>
+                              </p>
+                            </div>
                           </div>
                           <div class="top-icons"></div>
                         </div>
@@ -325,10 +352,16 @@
                       class="input-group-append cursor-pointer"
                       (click)="postMessage()"
                     >
-                      <span class="input-group-text" *ngIf="inputText.trim().length < 1">
+                      <span
+                        class="input-group-text"
+                        *ngIf="inputText.trim().length < 1"
+                      >
                         <img src="./assets/images/utills/send.svg" />
                       </span>
-                      <span class="input-group-text" *ngIf="inputText.trim().length >= 1">
+                      <span
+                        class="input-group-text"
+                        *ngIf="inputText.trim().length >= 1"
+                      >
                         <img src="./assets/images/utills/send-blue.svg" />
                       </span>
                     </div>
