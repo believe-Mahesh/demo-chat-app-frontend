@@ -130,15 +130,13 @@ export class ChatComponent implements OnInit {
             this.scrollToBottom()
           }, 1000);
         } else if (event.type === HttpEventType.Response) {
-          this.chatConvesrsation.pop();
-          this.chatConvesrsation.push({
-            type: 'from',
-            text: event.body,
-            url: data.url || '',
-          });
-
           this._chatService.getUrls(chatBody).subscribe((data) => {
-            this.url = data.url;
+            this.chatConvesrsation.pop();
+            this.chatConvesrsation.push({
+              type: 'from',
+              text: event.body,
+              url: data.url || '',
+            });
           })
         }
       },
