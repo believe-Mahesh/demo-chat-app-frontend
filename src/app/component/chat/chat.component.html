@@ -180,9 +180,9 @@
                               class="content"
                               [innerHTML]="chat.text | marked"
                             ></div>
-                            <div class="url-div" *ngIf="url.length > 0">
+                            <div class="url-div" *ngIf="chat.url.length > 0">
                               <p><b>Follow the link for additional information:</b></p>
-                            <div  class="url-text" *ngFor="let u of url">
+                            <div  class="url-text" *ngFor="let u of chat.url">
                               <p>
                                 <a
                                   href="{{ u }}"
